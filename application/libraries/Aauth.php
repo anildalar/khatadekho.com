@@ -2583,21 +2583,21 @@ class Aauth
 
     function applog($input1, $input2='')
     {
-         $this->aauth_db->insert('geopos_log', array('note'=>$input1,'user'=>$input2));
+        $this->aauth_db->insert('geopos_log', array('note'=>$input1,'user'=>$input2));
     }
 
      public function clock()
      {
 
-         $this->aauth_db->select('clock');
-         $this->aauth_db->where('id', $this->CI->session->userdata('id'));
-         $this->aauth_db->from('geopos_employees');
-         $query = $this->aauth_db->get();
-         $emp = $query->row_array();
-         return $emp['clock'];
+        $this->aauth_db->select('clock');
+        $this->aauth_db->where('id', $this->CI->session->userdata('id'));
+        $this->aauth_db->from('geopos_employees');
+        $query = $this->aauth_db->get();
+        $emp = $query->row_array();
+        return $emp['clock'];
      }
 
-          public function auto_attend()
+        public function auto_attend()
      {
          $this->aauth_db->select('key1');
          $this->aauth_db->where('id', 62);

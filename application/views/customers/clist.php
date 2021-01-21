@@ -6,16 +6,11 @@ if ($this->input->get('due')) {
 <div class="content-body">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title"><a
-                        href="<?php echo base_url('customers') ?>"
-                        class="mr-5">
-                    <?php echo $this->lang->line('Clients') ?></a> <a
-                        href="<?php echo base_url('customers/create') ?>"
-                        class="btn btn-primary btn-sm rounded">
-                    <?php echo $this->lang->line('Add new') ?></a> <a
-                        href="<?php echo base_url('customers?due=true') ?>"
-                        class="btn btn-danger btn-sm rounded">
-                    <?php echo $this->lang->line('Due') ?><?php echo $this->lang->line('Clients') ?></a></h4>
+            <h4 class="card-title"><a href="<?php echo base_url('customers') ?>" class="mr-5">
+                    <?php echo $this->lang->line('Clients') ?></a> <a href="<?php echo base_url('customers/create') ?>" class="btn btn-primary btn-sm rounded">
+                    <?php echo $this->lang->line('Add new') ?></a> <a href="<?php echo base_url('customers?due=true') ?>" class="btn btn-danger btn-sm rounded">
+                    <?php echo $this->lang->line('Due') ?><?php echo $this->lang->line('Clients') ?></a>
+            </h4>
             <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
             <div class="heading-elements">
                 <ul class="list-inline mb-0">

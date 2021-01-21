@@ -59,3 +59,18 @@ $route['translate_uri_dashes'] = FALSE;
 */
 $route['api/example/users/(:num)'] = 'api/example/users/id/$1'; // Example 4
 $route['api/example/users/(:num)(\.)([a-zA-Z0-9_-]+)(.*)'] = 'api/example/users/id/$1/format/$3$4'; // Example 8
+
+/*
+| -------------------------------------------------------------------------
+| Superadmin Routes
+| -------------------------------------------------------------------------
+*/
+$route['su'] = 'Superadmin/login/signIn'; 
+$route['su/checklogin'] = 'Superadmin/login/checklogin'; 
+$route['su/dashboard'] = 'Superadmin/Dashboard/superDashboard'; 
+$route['su/logout'] = 'Superadmin/login/logout'; 
+$route['su/business'] = 'Superadmin/BusinessController/index'; 
+$route['su/business/create'] = 'Superadmin/BusinessController/create'; 
+$route['su/business/store']['post'] = "Superadmin/BusinessController/store";
+$route['su/business/edit/(:any)'] = "Superadmin/BusinessController/edit/$1";
+$route['su/business/update/(:any)'] = "Superadmin/BusinessController/update/$1";

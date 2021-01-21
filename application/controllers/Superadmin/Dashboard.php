@@ -25,20 +25,29 @@ class Dashboard extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library("Aauth");
-        if (!$this->aauth->is_loggedin()) {
-            redirect('/user/', 'refresh');
+
+        $this->load->library('session');  
+
+        if($this->session->userdata('is_logged_in') != true){
+            redirect('/su/', 'refresh');
             exit;
         }
+        $this->load->library("Aauth");
+    }
 
-        $this->load->model('dashboard_model');
-        $this->load->model('tools_model');
+    public function superDashboard()
+    {
 
-
+        $head['usernm'] = $this->aauth->get_user()->username;
+        $head['title'] = 'Super Admin Dashboard';
+        
+        $this->load->view('superadmin/includes/header', $head);
+        $this->load->view('superadmin/dashboard');
+        $this->load->view('superadmin/includes/footer');
     }
 
 
-    public function index()
+   /* public function index()
     {
         $today = date("Y-m-d");
         $month = date("m");
@@ -108,5 +117,5 @@ class Dashboard extends CI_Controller
 
 
         redirect('dashboard');
-    }
+    }*/
 }

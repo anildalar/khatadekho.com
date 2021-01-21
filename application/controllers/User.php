@@ -37,7 +37,6 @@ class User extends CI_Controller
     public function index()
     {
 
-
         if ($this->aauth->is_loggedin()) {
             redirect('/dashboard/', 'refresh');
         }
@@ -50,7 +49,6 @@ class User extends CI_Controller
         $this->load->view('user/header');
         $this->load->view('user/index', $data);
         $this->load->view('user/footer');
-
 
     }
 
